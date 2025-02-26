@@ -1,0 +1,32 @@
+<% if flash[:alert].present? %>
+<p style="color: red;"><%= flash[:alert] %></p>
+<% end %>
+<% if flash[:signed_out].present? %>
+<p style="color: blue;"><%= flash[:signed_out] %></p>
+<% end %>
+<h3>----------------------------- OmniAuth -----------------------------</h3>
+<%= form_with(url: google_oauth2_sign_in_path) do |form| %>
+  <%= form.submit("Join With Google") %>
+<% end %>
+<%= form_with(url: facebook_sign_in_path) do |form| %>
+  <%= form.submit("Join With Facebook") %>
+<% end %>
+<%= form_with(url: linkedin_sign_in_path) do |form| %>
+  <%= form.submit("Join With LinkedIn") %>
+<% end %>
+<%= form_with(url: reddit_sign_in_path) do |form| %>
+  <%= form.submit("Join With Reddit") %>
+<% end %>
+<h3>----------------------------- Sign In -----------------------------</h3>
+<%= form_with(url: email_sign_in_path) do |form| %>
+  <%= form.email_field("email", placeholder: "Email") %>
+  <%= form.password_field("password", placeholder: "Password") %>
+  <%= form.submit("Sign In") %>
+<% end %>
+
+<h3>----------------------------- Sign Up -----------------------------</h3>
+<%= form_with(url: email_sign_up_path) do |form| %>
+  <%= form.email_field("email", placeholder: "Email") %>
+  <%= form.password_field("password", placeholder: "Password") %>
+  <%= form.submit("Sign Up") %>
+<% end %>

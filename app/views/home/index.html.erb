@@ -1,0 +1,11 @@
+<% if flash[:sucess].present? %>
+<p style="color: green;"><%= flash[:sucess] %></p>
+<% end %>
+<h3>---------- Home ----------</h3>
+<h4>Signed In User</h4>
+<h5>UserId: <%= Current.user.id %><h5>
+<h5>Provider: <%= Current.user_authentication.provider %></h5>
+<h5>ExternalId: <%= Current.user_authentication.external_id %></h5>
+<%= form_with(url: logout_path, method: :delete) do |form| %>
+  <%= form.submit("Logout") %>
+<% end %>

@@ -1,0 +1,11 @@
+source "https://rubygems.org"
+
+gem "rails", "~> 8.0.1"
+gem "sqlite3", ">= 2.1"
+gem "puma", ">= 5.0"
+gem "bcrypt", "~> 3.1.7"
+gem "omniauth-rails_csrf_protection", "~> 1.0.2"
+gem "omniauth-google-oauth2", "~> 1.2.1"
+gem "omniauth-facebook", "~> 9.0.0"
+gem "omniauth-linkedin-openid", "~> 1.0.2"
+gem "omniauth-reddit", git: "https://github.com/jackdempsey/omniauth-reddit.git"
